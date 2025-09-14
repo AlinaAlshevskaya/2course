@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Everbloom Header</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="images/header.jpg" width="200px">
+        <nav>
+            <a href="#">Каталог</a>
+            <a href="#">Оплата и доставка</a>
+            <a href="#">Контакты</a>
+            <div class="icon">
+                <img src="images/user-svgrepo-com.svg" alt="User Icon" style="width: 70%; height: 70%;">
+            </div>
+            <div class="icon">
+                <img src="images/cart-shopping-svgrepo-com.svg" alt="Cart Icon" style="width: 70%; height: 70%;">
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="user-details">
+            <h2>Ваши данные</h2>
+            <label for="full-name">Ваше ФИО</label>
+            <input type="text" id="full-name" value="Филиппов Илья" />
+
+            <label for="phone">Номер телефона</label>
+            <input type="text" id="phone" value="+375295500073" />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" value="lubimayakotenka@gmail.com" />
+
+            <a style="text-decoration: underline;display: block;">Загрузить фото</a>
+        </div>
+
+        <img src="images/user-pic.jpg" alt="Profile Picture" class="profile-pic">
+    </div>
+
+    <div class="orders-history-container">
+        <h2>История заказов</h2>
+<div class="orders-history">
+     <div class="arrow ">
+
+                <img class="left-arrow" src="images/arrow-left-335-svgrepo-com (1).svg" alt="Left Arrow" />
+
+            </div> 
+        <div class="noarrows">
+            <div class="header-text">
+                <p id="header-left" style="font-size: 24px;">Заказ № 0001</p>
+                <p id="header-right" style="font-size: 24px;">Статус: Выдан</p>
+            </div>
+            
+            <div class="order">
+
+                <div class="spec-order">
+                    <p>Букет "Лав Ю"</p>
+                    <p> 164.00 BYN × 1</p>
+                    <p>Итого: 164.00 BYN</p>
+                </div>
+                <div class="spec-order">
+                    <p>Букет "Кис Ю"</p>
+                    <p> 155.00 BYN × 1</p>
+                    <p>Итого: 155.00 BYN</p>
+                </div>
+                <div class="spec-order">
+                    <p>Букет "Сладкая моя"</p>
+                    <p> 155.00 BYN × 1</p>
+                    <p>Итого: 155.00 BYN</p>
+                </div>
+                <p id="total-price" style="margin-right: 18px;">Итоговая стоимость: 474.00 BYN</p>
+            </div>
+            <div class="delivery-info">
+                <p>Тип доставки: Самовывоз</p>
+                <p>Адрес магазина: ул. Макаевского, 10, Минск</p>
+                <p>Дата и время: 14.02.2025 14:00</p>
+            </div>
+            <div class="button-container">
+                <button id="leave-review-button">Оставить отзыв</button>
+            </div>
+           
+        </div> 
+        <div class="arrow ">
+
+                <img class="right-arrow" src="images/arrow-right-svgrepo-com.svg" alt="Right Arrow" />
+
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer-inner-container">
+            <div>
+                <h4>Адреса магазинов</h4>
+                <ul>
+                    <li>ул. Маяковского, 10, Минск</li>
+                    <li>ул. Пушкина, 21, Минск</li>
+                    <li>Партизанский пр-т, 45, Минск</li>
+                    <li>ул. Сурганова, 76, Минск</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Контакты</h4>
+                <ul>
+                    <li>+375 (29) 177-34-56</li>
+                    <li>+375 (29) 550-00-73</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Режим работы</h4>
+                <p>С 10:00 до 23:00 (Пн-Пт)<br />
+                    С 10:00 до 22:00 (Сб-Вс)</p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

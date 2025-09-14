@@ -1,0 +1,280 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFEEED;
+    margin: 0;
+    padding: 50px 88px 0px 88px;
+    padding-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 40px 88px 0px 88px;
+}
+
+.user-details {
+    flex: 1;
+    padding: 20px;
+    padding: 0px 88px 0px 88px;
+}
+
+.user-details h2 {
+    margin: 0 0 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.user-details label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #b37a9c;
+    background-color: #F6D6D4;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFEEED;
+    padding: 10px 20px;
+   
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    /* background-color: #b37a9c; */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #b37a9c;
+}
+
+.orders-history-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding: 50px;
+    position: relative;
+}
+
+.orders-history-container h2{
+    flex: 1 1 100%;
+    padding-left: 60px;
+}
+
+.arrow {
+    flex: 0 0 5%;
+    cursor: pointer;
+    vertical-align:baseline;
+}
+
+.left-arrow {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.right-arrow{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.orders-history {
+    background-color: #C87688;
+    flex: 1 1 60%;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 40px 10px 40px 10px;
+    align-items: center;
+}
+
+.header-text {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+}
+
+.header-text-left {
+    flex: 1 1 30%;
+}
+
+.header-text-right {
+    flex: 1 1 30%;
+    border: 1px solid;
+    display: inline-block;
+    text-align: right;
+
+}
+
+.header-text p {
+    display: inline;
+    color: white;
+}
+
+.header-text {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#header-left {
+    display: inline-block;
+    width: 40%;
+    padding-left: 60px;
+}
+
+#header-right {
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+}
+
+.order {
+    flex-grow:1;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #F6D6D4;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.spec-order {
+    flex: 1 1 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid;
+}
+
+.spec-order p {
+    display: inline;
+
+}
+
+#total-price {
+    flex: 1 1 100%;
+    text-align: right;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.delivery-info {
+    color: white;
+    text-align: left;
+    padding: 10px;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.delivery-info p {
+    display: block;
+}
+
+.button-container {
+    flex: 1 1 100%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.button-container button {
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    cursor: progress;
+    font-size: 20px;
+    color: white;
+    text-decoration: underline;
+    float: right;
+}
+
+footer {
+    background-color: #C8627A;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 20px;
+}
+
+.footer-inner-container {
+    flex: 1 1 100%;
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 250px;
+    align-items: top;
+    align-content: top;
+    justify-content: center;
+    justify-items: center;
+    /* border: 1px solid; */
+}
+ul {
+            list-style: none;
+            padding: 0;
+            color: #ffffff; 
+        }
+.noarrows{
+    width:90%;
+}
+
+/* .footer-inner-container div{
+    border: 1px solid;
+} */

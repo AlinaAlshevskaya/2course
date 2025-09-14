@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everbloom Header</title>
+    <style>
+               body {
+            font-family: Arial, sans-serif;
+            background-color: #fbdcda;
+            margin: 0;
+            padding: 50px 88px 0px 88px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+           padding: 40px 88px 0px 88px; 
+     
+          
+           
+        }
+        .user-details {
+            flex: 1;
+            padding: 20px;
+           
+            padding:  0px 88px 0px 88px;
+        }
+        .user-details h2 {
+            margin: 0 0 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .user-details label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            
+        }
+        input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #f03737;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            outline: none;
+            border-radius: 25px;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin-left: 20px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fbdcda;
+            padding: 10px 20px;
+            border-bottom: 1px solid #b37a9c;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #b37a9c;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+           
+        }
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+             font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fbdcda;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #b37a9c;
+        }
+        .zakaz{
+            background-color: azure;
+            border-radius: 25px;
+            padding: 30px 30px 10px 30px;
+            margin:5px 20px 0px 20px;
+            width:85%;
+            align-items: center;
+        }
+        .order-number{
+            background-color: #b37a9c;
+            border-radius: 25px;
+            padding: 35px ;
+            align-content: center;
+           
+        }
+        .withbuttons{
+            display: flex;
+            align-items: center;
+        }
+        .listat{
+            height: 70px;
+            width: 20px;
+            vertical-align: middle;
+            margin: 15px;
+        }
+         ul {
+            list-style: none;
+            padding: 0;
+            color: #ffffff; 
+        }
+        h4{
+            color: #ffffff;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="everbloom.png">
+        <nav>
+            <a href="#">Каталог</a>
+            <a href="#">Оплата и доставка</a>
+            <a href="#">Контакты</a>
+            <div class="icon">
+                <img src="icons8-пользователь-32.png" alt="User Icon" style="width: 70%; height: 70%;">
+            </div>
+            <div class="icon">
+                <img src="icons8-shopping-cart-32.png" alt="Cart Icon" style="width: 30%; height: 70%;">
+            </div>
+        </nav>
+    </header>
+   <div class="container">
+        <div class="user-details">
+            <h2>Ваши данные</h2>
+            <label for="full-name">Ваше ФИО</label>
+            <input type="text" id="full-name" value="Филиппов Илья" />
+            
+            <label for="phone">Номер телефона</label>
+            <input type="text" id="phone" value="+375295500073" />
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" value="lubimayakotenka@gmail.com" />
+            
+            <a style="text-decoration: underline;display: block;">Загрузить фото</a>
+        </div>
+   
+        <img src="DSCF0154.JPG" alt="Profile Picture" class="profile-pic">
+    </div>
+     <h2>История заказов</h2>
+        <div class="order-number">
+            <p style="display: inline-block;width:50%;padding-left: 60px;">Заказ № 0001 </p>
+            <p style="display: inline-block;width: 49%; text-align: right;">Статус: Выдан</p>
+            <div class="withbuttons">
+            <button class=" listat"><img></button>
+       <div class="zakaz">
+       
+           
+         <p style="display:inline; width: auto; margin-right: 65px;">Букет "Лав Ю"</p>
+         <p style="display:inline; width: auto; margin-right: 57%;"> 164.00 BYN × 1</p>
+         <p  style="text-align: right;display:inline; width: auto; ">Итого: 164.00 BYN</p>
+<hr>
+                <p style="display:inline; width: auto; margin-right: 58px;">Букет "Кис Ю"</p>
+                <p style="display:inline; width: auto; margin-right: 58%;">155.00 BYN × 1</p>
+            
+             <p  class=" leftinf" style="display:inline; width: auto; text-align: right;">Итого: 155.00 BYN</p>
+             <hr>
+            
+            <p style="display:inline; width: auto; margin-right: 50px;">Букет "Сладкая моя"</p>
+                <p style="display:inline; width: auto; margin-right: 54%;">155.00 BYN × 1</p>
+            <p  class=" leftinf" style="display:inline; width: auto; text-align: right;">Итого: 155.00 BYN</p>
+            <hr>
+            <p  style="text-align: right;margin-right: 29px;">Итоговая стоимость: 474.00 BYN</p>
+      </div>
+      <button class="listat"><img></button>
+    </div>
+        
+        <div class="delivery-info">
+            <p>Тип доставки: Самовывоз</p>
+            <p>Адрес магазина: ул. Макаевского, 10, Минск</p>
+            <p>Дата и время: 14.02.2025 14:00</p>
+        </div>
+        <a class="review-button" style=" display: block;text-decoration: underline;text-align: right; margin-right: 20px;">Оставить отзыв</a>
+        </div>
+    </div>
+    <footer style="background-color:#C8627A; display: flex; justify-content: space-around;margin-top: 100px;">
+       
+            <!-- Store Addresses Section -->
+            <div>
+                <h4>Адреса магазинов</h4>
+                <ul>
+                    <li>ул. Маяковского, 10, Минск</li>
+                    <li>ул. Пушкина, 21, Минск</li>
+                    <li>Партизанский пр-т, 45, Минск</li>
+                    <li>ул. Сурганова, 76, Минск</li>
+                </ul>
+            </div>
+            <!-- Contacts Section -->
+            <div>
+                <h4>Контакты</h4>
+                <ul>
+                    <li>+375 (29) 177-34-56</li>
+                    <li>+375 (29) 550-00-73</li>
+                </ul>
+            </div>
+            <!-- Working Hours Section -->
+            <div>
+                <h4>Режим работы</h4>
+                <p style="color:#ffffff">С 10:00 до 23:00 (Пн-Пт)<br />
+                   С 10:00 до 22:00 (Сб-Вс)</p>
+            </div>
+        
+    </footer>
+</body>
+</html>
