@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					 xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<sys:String x:Key="Title">Цветочный магазин</sys:String>
+	<sys:String x:Key ="Autorisation">Авторизация</sys:String>
+	<sys:String x:Key="Login">Вход</sys:String>
+	<sys:String x:Key="Register">Регистрация</sys:String>
+	<sys:String x:Key="Username">Имя пользователя</sys:String>
+	<sys:String x:Key="Password">Введите пароль*</sys:String>
+	<sys:String x:Key="Phonenumber">Введите номер телефона*</sys:String>
+	<sys:String x:Key="FirstName">Введите фамилию*</sys:String>
+	<sys:String x:Key="CreateAcc">Создать аккаунт</sys:String>
+	<sys:String x:Key="RegFields">*-обязательные поля для заполнения</sys:String>
+	<sys:String x:Key="Name">Введите имя*</sys:String>
+	<sys:String x:Key="LogPassword">Введите пароль</sys:String>
+	<sys:String x:Key="LogPhonenumber">Введите номер телефона</sys:String>
+	<sys:String x:Key="Enter">Войти</sys:String>
+	<sys:String x:Key="AdminEnter">Войти как сотрудник</sys:String>
+	<sys:String x:Key="Language">English</sys:String>
+</ResourceDictionary>

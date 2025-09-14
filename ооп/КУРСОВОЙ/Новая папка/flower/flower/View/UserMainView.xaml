@@ -1,0 +1,344 @@
+﻿<Window x:Class="flower.View.UserMainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mdl ="clr-namespace:Models;assembly=Models"
+        Title="{DynamicResource UserDeskTitle}" Height="700" Width="1000"
+        Name="MainWin">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="63.34"/>
+            <RowDefinition Height="6.66"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="GridControlPanel" Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="Menu" 
+                Style="{DynamicResource MaterialDesignIconButton}" 
+                Width="30" Height="30" 
+                HorizontalAlignment="Left" 
+                Margin="10,10,0,23" 
+                Click="Menu_Click">
+            <iconPacks:PackIconMaterial Kind="menu"  Width="30" Height="30"/>
+        </Button>
+
+
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Height="auto" HorizontalAlignment="Center" Margin="20,10,0,0" Grid.RowSpan="2">
+
+            <Button
+                Content="{DynamicResource AddentityButtonTitle}" Height="50" Width="100"
+                Name="AddUserButton"
+                Command="{Binding ShowAddUserCommand}"
+                Visibility="Collapsed"/>
+
+            <Button
+                Content="{DynamicResource AddentityButtonTitle}" Height="50" Width="100"
+                Name="AddProductButton"
+                Command="{Binding ShowAddProductCommand}"
+                Visibility="Collapsed"/>
+
+
+            <TextBox  BorderThickness="1" Width="300"  Height="50" Text="{Binding FilterText,UpdateSourceTrigger=PropertyChanged}"  
+                     Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="0,0,10,0" />
+            <Button Command="{Binding SearchCommnand}" Cursor="Hand" Background="Transparent" BorderThickness="0" Width="90" Height="70" VerticalAlignment="Center">
+                <iconPacks:PackIconMaterial  VerticalAlignment="Center" Kind="Magnify" Foreground="BlueViolet" Width="50" Height="50"/>
+
+            </Button>
+
+            <StackPanel x:Name="priceSort" Orientation="Horizontal" Margin="10,0,10,0">
+                <TextBlock Margin="0,0,10,0" FontSize="16" Text="{DynamicResource FromPriceTitle}" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding FromPrice}"  Margin="10,0,10,0" BorderThickness="0" Width="50" VerticalAlignment="Center"/>
+                <TextBlock Margin="10,0,10,0" FontSize="16" Text="{DynamicResource ToPriceTitle}" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding ToPrice}" Margin="10,0,10,0" Width=" 50" VerticalAlignment="Center"/>
+                <Button Command="{Binding SearchPriceCommand}" Margin="10,0,0,0" FontSize="16" Content="{DynamicResource Main_implementButton}" Cursor="Hand"/>
+            </StackPanel>
+
+        </StackPanel>
+        
+
+
+        <Border x:Name="controlPanel" Grid.Row="2" Background="BlueViolet" CornerRadius="0 50 0 30" >
+            <DockPanel>
+                <Button Command="{Binding ShowMoreCommand}" DockPanel.Dock="Top" x:Name="foto" Width="90" Height="90" Padding="3" Background="Transparent" BorderThickness="0" Cursor="Hand">
+                    <Grid Height="80" Width="80">
+                        <Ellipse Fill="White"></Ellipse>
+                        <TextBlock Name="FirstLetterText" Text="U" HorizontalAlignment="Center" Foreground="BlueViolet" VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                </Button>
+                <TextBlock DockPanel.Dock="Top" x:Name="userName" Text="{Binding EnteredUser.FirstName}" Foreground="White" FontSize="20" HorizontalAlignment="Center"/>
+                <Separator DockPanel.Dock="Top" Name="seporator" Margin="10" Height="0.8" Background="white"/>
+                <StackPanel DockPanel.Dock="Top" x:Name="menuButtons" Height="auto" Margin="0,50,0,0">
+                    <!--Need to remove this mauve-->
+                    <Button x:Name="buttonCustomers" Margin="0,0,0,10" Command="{Binding ShowUsersCommand}" Click="buttonCustomers_Click">
+                        <StackPanel Orientation="Horizontal" >
+                            <iconPacks:PackIconMaterial Kind="Account" HorizontalAlignment="Left" Margin="0,0,20,0"/>
+                            <TextBlock x:Name="Customers" Text="{DynamicResource ClientsButtonTitle}" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Button>
+                    <!--End-->
+                    <Button Margin="0,0,0,10" Command="{Binding ShowOrdersCommand}" Click="Button_Click">
+                        <StackPanel Orientation="Horizontal" >
+                            <iconPacks:PackIconMaterial Kind="ListBox" HorizontalAlignment="Left" Margin="0,0,20,0"/>
+                            <TextBlock x:Name="Orders" Text="{DynamicResource OrdersButtonTitle}" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Margin="0,0,0,10" Command="{Binding ShowCartCommand}" Click="Button_Click_2">
+                        <StackPanel Orientation="Horizontal" >
+                            <iconPacks:PackIconMaterial Kind="Cart" HorizontalAlignment="Left" Margin="0,0,20,0"/>
+                            <TextBlock x:Name="Cart" Text="{DynamicResource Main_CartButton}" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="Products1" Margin="0,0,0,10" Command="{Binding ShowProductsCommand}" Click="Products1_Click">
+                        <StackPanel Orientation="Horizontal" >
+                            <iconPacks:PackIconMaterial Kind="Flower" HorizontalAlignment="Left" Margin="0,0,20,0"/>
+                            <TextBlock x:Name="Products" Text="{DynamicResource ProductsButtonTitle}" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Margin="0,0,0,10"  Command="{Binding ShowReviewsCommand}" Click="Button_Click_1">
+                        <StackPanel Orientation="Horizontal" >
+                            <iconPacks:PackIconMaterial Kind="MessageProcessing" HorizontalAlignment="Left" Margin="0,0,20,0"/>
+                            <TextBlock x:Name="Feedbacks" Text="{DynamicResource ReviewsButtonTitle}" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="english" Margin="0,0,0,10" Click="ChangeLangClick">
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconMaterial Kind="Translate" HorizontalAlignment="Left" Margin="0,0,20,0"/>
+                            <TextBlock x:Name="changeLangButton" Text="English" HorizontalAlignment="Right"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <Button DockPanel.Dock="Bottom" Command="{Binding ExitCommand}" x:Name="backtoAu" Margin="0" Style="{DynamicResource MaterialDesignIconButton}"
+                        Background="White" >
+                    <iconPacks:PackIconMaterial Kind="AccountArrowLeft" Width="20" Height="20" />
+                </Button>
+
+            </DockPanel>
+        </Border>
+
+
+
+
+        
+        <ScrollViewer Grid.Column="2" Grid.Row="2" Name="Catalog">
+            
+            <ItemsControl Name="ContentControl">
+                <ItemsControl.Resources>
+                    <DataTemplate DataType="{x:Type mdl:User}">
+                        <materialDesign:Card Padding="20" Margin="20,15,20,15"
+                            Background="{DynamicResource MaterialDesignPaper}"
+       
+                              Width="320"
+                            >
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,8">
+                                    <Ellipse Width="54" Height="54" Fill="#7C4DFF" VerticalAlignment="Center">
+
+                                    </Ellipse>
+                                    <StackPanel Margin="18,0,0,0" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding UserName}" 
+                                           Style="{DynamicResource MaterialDesignTitleTextBlock}" 
+                                            FontWeight="Bold" 
+                                            FontSize="18"
+                                            Foreground="#5e35b1"/>
+                                        <TextBlock Text="{Binding UserSurename}" 
+                                            Style="{DynamicResource MaterialDesignBodyTextBlock}" 
+                                            FontSize="15"
+                                        Foreground="#673ab7"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                                    <iconPacks:PackIconMaterial Kind="EmailOutline" Width="22" Height="22" Foreground="#9575cd" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Email}" Foreground="#333" Margin="8,0,0,0" FontSize="14"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                                    <iconPacks:PackIconMaterial Kind="Phone" Width="22" Height="22" Foreground="#9575cd" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding PhoneNumber}" Foreground="#333" Margin="8,0,0,0" FontSize="14"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,4,0,14">
+                                    <iconPacks:PackIconMaterial Kind="ShieldAccountOutline" Width="22" Height="22" Foreground="#ab47bc" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Role}" Foreground="#4a148c" FontWeight="SemiBold" Margin="8,0,0,0" FontSize="13"/>
+                                </StackPanel>
+
+                                <Button Content="{DynamicResource DetailsCardButtonTitle}"
+                                     Command="{Binding DataContext.ShowMoreUserCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                    CommandParameter="{Binding}"
+                                     Style="{DynamicResource MaterialDesignOutlinedButton}"
+                                    Foreground="#7C4DFF" 
+                                     Margin="0,7,0,0" 
+                                        Height="36" FontWeight="Bold"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type mdl:Order}" x:Name="order">
+                        <materialDesign:Card Padding="20" Margin="14,15,14,15"
+                            Background="{DynamicResource MaterialDesignPaper}"
+                            Width="320">
+                            <StackPanel>
+                                <!-- ID и дата заказа -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,8" VerticalAlignment="Center">
+                                    <iconPacks:PackIconMaterial Kind="Barcode" Width="36" Height="36" Foreground="#7C4DFF" VerticalAlignment="Center"/>
+                                    <StackPanel Margin="14,0,0,0">
+                                        <TextBlock Text="{DynamicResource OrderCardIdTitle}" FontSize="12" Foreground="#5e35b1"/>
+                                        <TextBlock Text="{Binding OrderId}" FontWeight="Bold" FontSize="16" Foreground="#5e35b1"/>
+                                    </StackPanel>
+                                    
+                                </StackPanel>
+
+                                <!-- Клиент -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                    <iconPacks:PackIconMaterial Kind="Account" Width="22" Height="22" Foreground="#9575cd" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding User.UserName}" Margin="8,0,0,0" FontWeight="SemiBold" Foreground="#333" FontSize="14"/>
+                                </StackPanel>
+
+                                <!-- Контакт (если есть) -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                    <iconPacks:PackIconMaterial Kind="Phone" Width="22" Height="22" Foreground="#9575cd" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding User.PhoneNumber}" Margin="8,0,0,0" Foreground="#333" FontSize="13"/>
+                                </StackPanel>
+
+                                <!-- Сумма -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                    <iconPacks:PackIconMaterial Kind="Cash" Width="22" Height="22" Foreground="#43A047" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding TotalPrice}" Margin="8,0,0,0" Foreground="#207b42" FontSize="14" FontWeight="Bold"/>
+                                </StackPanel>
+
+                                <!-- Статус -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <iconPacks:PackIconMaterial Kind="TruckDelivery" Width="22" Height="22" Foreground="#ab47bc" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding OrderStatus}" Margin="8,0,0,0" Foreground="#4a148c" FontWeight="SemiBold" FontSize="13"/>
+                                </StackPanel>
+
+                                <!-- Кнопка подробностей -->
+                                <Button Content="{DynamicResource Main_OrderMoreButton}"
+                                    Command="{Binding DataContext.ShowOrderDetailsCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                    CommandParameter="{Binding}"
+                                    Style="{DynamicResource MaterialDesignOutlinedButton}"
+                                    Foreground="#7C4DFF"
+                                    Margin="0,7,0,0"
+                                    Height="36" FontWeight="Bold"/>
+
+                                <Button Content="{DynamicResource Main_OrderDeleteButton}"
+                                        Name="deleteOrderButton"
+                                        Command="{Binding DataContext.DeleteOrderCommand , RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                        CommandParameter="{Binding}"
+                                         Style="{DynamicResource MaterialDesignOutlinedButton}"
+                                    Foreground="#7C4DFF"
+                                    Margin="0,7,0,0"
+                                    Height="36" FontWeight="Bold"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type mdl:Product}" x:Name="prodStack">
+                        <materialDesign:Card Padding="20" Margin="14,15,14,15"
+                         Background="{DynamicResource MaterialDesignPaper}"
+                            Width="320">
+                            <StackPanel>
+                                <StackPanel Orientation="Vertical" Margin="0,0,0,8">
+                                    <Image Source="{Binding PhotoPath}" />
+                                    <TextBlock Text="{Binding ProductName}" 
+                        Style="{DynamicResource MaterialDesignTitleTextBlock}" 
+                        FontWeight="Bold" 
+                        FontSize="18"
+                        Foreground="#5e35b1"/>
+                                    <TextBlock Text="{Binding ProductDescription}" 
+                        Style="{DynamicResource MaterialDesignBodyTextBlock}" 
+                        FontSize="15"
+                        Foreground="#673ab7"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                                    <TextBlock Text="{DynamicResource Main_ProductPrice}" FontWeight="Bold" />
+                                    <TextBlock Text="{Binding Price, StringFormat='{}{0}'}" Foreground="#333" Margin="8,0,0,0" FontSize="14"/>
+                                </StackPanel>
+                               
+                               
+                                
+                                <Button Content="{DynamicResource Main_AddToCartButton}"
+                    Command="{Binding DataContext.AddToCartCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                    CommandParameter="{Binding}"
+                    Style="{DynamicResource MaterialDesignOutlinedButton}"
+                    Foreground="#7C4DFF" 
+                    Margin="0,7,0,0" 
+                    Height="36" FontWeight="Bold"/>
+                                <Button Content="{DynamicResource Main_OrderMoreButton}" 
+                                      Command="{Binding DataContext.ShowMoreProduct, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                     CommandParameter="{Binding}" 
+                                        Style="{DynamicResource MaterialDesignOutlinedButton}"
+                                        Foreground="#7C4DFF" 
+                                     Margin="0,7,0,0" 
+                                         Height="36" FontWeight="Bold" />
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type mdl:Review}">
+                        <materialDesign:Card Padding="20" Margin="14"
+        Background="{DynamicResource MaterialDesignPaper}"
+        Width="320" Effect="{DynamicResource MaterialDesignElevation4}">
+
+                            <StackPanel>
+                                <!-- Reviewer Details -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                    <TextBlock Text="{Binding User.UserName}" 
+                           Style="{DynamicResource MaterialDesignTitleTextBlock}" 
+                           FontWeight="Bold" 
+                           FontSize="18" 
+                           Foreground="#5e35b1"/>
+                                </StackPanel>
+
+                                <!-- Review Text -->
+                                <TextBlock Text="{Binding ReviewText}" 
+                       Style="{DynamicResource MaterialDesignBodyTextBlock}" 
+                       FontSize="15" 
+                       Foreground="#673ab7"
+                       TextWrapping="Wrap"/>
+
+                                <!-- Rating -->
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,2">
+                                    <TextBlock Text="{DynamicResource Main_ProductRatung}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Rate}"/>
+                                </StackPanel>
+
+                                <!-- Review Date -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                    <TextBlock Text="Date: " FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding CreationDate, StringFormat='{}{0:MMMM dd, yyyy}'}" 
+                           Foreground="#333" 
+                           Margin="8,0,0,0" 
+                           FontSize="14"/>
+                                </StackPanel>
+
+                                <!-- Action Button -->
+                                <Button Content="View" 
+                Command="{Binding DataContext.MoreReviewCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                CommandParameter="{Binding}" 
+                Style="{DynamicResource MaterialDesignOutlinedButton}" 
+                Foreground="#7C4DFF" 
+                Margin="0,7,0,0" 
+                Height="36" FontWeight="Bold"/>
+                            </StackPanel>
+                        </materialDesign:Card>
+                    </DataTemplate>
+
+
+                </ItemsControl.Resources>
+              
+                    <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            
+        </ScrollViewer>
+
+    </Grid>
+</Window>

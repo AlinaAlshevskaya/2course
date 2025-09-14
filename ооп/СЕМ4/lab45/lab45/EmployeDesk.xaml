@@ -1,0 +1,154 @@
+﻿<Window x:Class="lab45.EmployeDesk"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+Title="EmployeDesk" WindowState="Maximized" Width="1000
+        " Height="701">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="GridControlPanel" Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200" x:Name="Gridfilterpanel"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="Menu"  Style="{DynamicResource MaterialDesignIconButton}" Width="30" Height="30" HorizontalAlignment="Left" Margin="10 10 10 30" Click="Menu_Click">
+            <iconPacks:PackIconMaterial Kind="menu" Width="30" Height="30"></iconPacks:PackIconMaterial>
+        </Button>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" Height="auto" HorizontalAlignment="Center">
+            <TextBox Width="300"  Height="50" Text="{Binding FilterText}"  Style="{DynamicResource MaterialDesignOutlinedTextBox}" Margin="0 0 10 0" ></TextBox>
+            <iconPacks:PackIconMaterial VerticalAlignment="Center" Kind="Magnify" Foreground="BlueViolet" Width="50" Height="50"></iconPacks:PackIconMaterial>
+        </StackPanel>
+
+        <Border x:Name="controlPanel" Grid.Row="1" Grid.RowSpan="2" Background="BlueViolet" CornerRadius="0 50 0 30">
+            <DockPanel>
+                <Border x:Name="foto" Width="80" Height="80" Padding="3" Background="white" CornerRadius="100" Margin=" -10 -30 0 10" DockPanel.Dock="Top">
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ></ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+                <TextBlock  DockPanel.Dock="Top" x:Name="userName" Text="Firstname Name" Foreground="White" FontSize="20" HorizontalAlignment="Center"></TextBlock>
+                <Separator  DockPanel.Dock="Top" Name="seporator" Margin="10" Height="0.8" Background="white"></Separator>
+                <StackPanel DockPanel.Dock="Top" x:Name="menuButtons" Height="auto" Margin="0 50 0 0">
+                    <Button x:Name="buttonCustomers" Margin=" 0 0 0 10">
+                        <StackPanel Orientation="Horizontal" >
+                            <iconPacks:PackIconMaterial Kind="Account" HorizontalAlignment="Left" Margin="0 0 20 0"></iconPacks:PackIconMaterial>
+                            <TextBlock x:Name="Customers" Text="Клиенты" HorizontalAlignment="Right"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Margin=" 0 0 0 10">
+                        <StackPanel Orientation="Horizontal"  >
+                            <iconPacks:PackIconMaterial Kind="Cart" HorizontalAlignment="Left" Margin="0 0 20 0"></iconPacks:PackIconMaterial>
+                            <TextBlock x:Name="Orders" Text="Заказы" HorizontalAlignment="Right"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="Products1" Margin=" 0 0 0 10" Click="Button_Click">
+                        <StackPanel Orientation="Horizontal"  >
+                            <iconPacks:PackIconMaterial Kind="Flower" HorizontalAlignment="Left" Margin="0 0 20 0"></iconPacks:PackIconMaterial>
+                            <TextBlock x:Name="Products" Text="Товары" HorizontalAlignment="Right"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Margin=" 0 0 0 10">
+                        <StackPanel Orientation="Horizontal"  >
+                            <iconPacks:PackIconMaterial Kind="MessageProcessing" HorizontalAlignment="Left" Margin="0 0 20 0"></iconPacks:PackIconMaterial>
+                            <TextBlock x:Name="Feedbacks" Text="Отзывы" HorizontalAlignment="Right"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <Button DockPanel.Dock="Bottom" x:Name="backtoAu" Margin=" 0 0 0 0" Style="{DynamicResource MaterialDesignIconButton}" Background="White" Click="backtoAu_Click"  >
+                    <iconPacks:PackIconMaterial Kind="AccountArrowLeft" Width="20" Height="20" ></iconPacks:PackIconMaterial>
+                </Button>
+            </DockPanel>
+
+        </Border>
+        <Border x:Name="filterpanel" Grid.Column="1" Grid.Row="1" Background="MediumPurple" CornerRadius="50 50 50 0" Padding="15 30 15 15">
+            <StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="0"  Orientation="Horizontal">
+                    <TextBlock Text="Цена от" Style="{DynamicResource MaterialDesignOverlineTextBlock}" Foreground="White"></TextBlock>
+                    <TextBox Width=" 40" Background="White"  Margin="5 0 5 0" Style="{DynamicResource  MaterialDesignTextBoxBase}"  ></TextBox>
+                    <TextBlock Text="до" Style="{DynamicResource MaterialDesignOverlineTextBlock}" Foreground="White"></TextBlock>
+                    <TextBox Width=" 40" Background="White"  Margin="5 0 0 0" Style="{DynamicResource  MaterialDesignTextBoxBase}"  ></TextBox>
+                </StackPanel>
+                <StackPanel Margin="0 10 0 10">
+                    <DockPanel  Margin="0 0 0 10">
+                        <TextBlock  Style="{DynamicResource MaterialDesignOverlineTextBlock}" Foreground="White" Text="Категория" HorizontalAlignment="Left" ></TextBlock>
+                        <Button x:Name="ButtonShowCategories" Width="15" Height="15" HorizontalAlignment="Right" Style="{DynamicResource MaterialDesignIconButton}" Click="ButtonShowCategories_Click">
+                            <iconPacks:PackIconMaterial Kind="ArrowDownBox" x:Name="iconforbuttonshow"/>
+                        </Button>
+                    </DockPanel>
+                    <Border x:Name="CatecoriesCatalog" Background="White" CornerRadius="8">
+                        <StackPanel >
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel Margin="0 10 0 10">
+                    <DockPanel  Margin="0 0 0 10">
+                        <TextBlock  Style="{DynamicResource MaterialDesignOverlineTextBlock}" Foreground="White" Text="Цвет" HorizontalAlignment="Left" ></TextBlock>
+                        <Button x:Name="ButtonShowColors" Width="15" Height="15" HorizontalAlignment="Right" Style="{DynamicResource MaterialDesignIconButton}" Click="ButtonShowColors_Click">
+                            <iconPacks:PackIconMaterial Kind="ArrowDownBox" x:Name="iconforbuttonshowcolor"/>
+                        </Button>
+                    </DockPanel>
+                    <Border x:Name="ColorCatalog" Background="White" CornerRadius="8">
+                        <StackPanel >
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                            <DockPanel>
+
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                            <DockPanel>
+                                <CheckBox></CheckBox>
+                                <TextBlock Text="Розы" Foreground="MediumPurple" Style="{DynamicResource MaterialDesignHelperTextBlock}"></TextBlock>
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <ScrollViewer Grid.Column="2" Grid.Row="2"  Name="Catalog">
+            <Grid x:Name="CatalogPanel" ></Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,88 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--Log In View-->
+    <sys:String x:Key="LogInSignUpTitle">Log In</sys:String>
+    <sys:String x:Key="AuthorisationTitle">Authorisation</sys:String>
+    <sys:String x:Key="RegisterButtonName">Register</sys:String>
+    <sys:String x:Key="LogInButtonName">Log In</sys:String>
+    <sys:String x:Key="PhonrNumberTitle">Phone Number</sys:String>
+    <sys:String x:Key="PasswordTitle">Password</sys:String>
+    <sys:String x:Key="EnterLoginButtonName">Log In</sys:String>
+    <sys:String x:Key="AdminEnterLoginButtonName">Log in as admin</sys:String>
+    <!--Sign Up View-->
+    <sys:String x:Key="SignUpTitle">Sign Up</sys:String>
+    <sys:String x:Key="RequiredFields">*-Required fields</sys:String>
+    <sys:String x:Key="FirstNameTitle">First Name</sys:String>
+    <sys:String x:Key="SurenameTitle">Surename</sys:String>
+    <sys:String x:Key="PhoneNumberTitle">Phone Number</sys:String>
+    <sys:String x:Key="CreateAccountButtonTitle">Create Account</sys:String>
+    <!--Main View User And Admin-->
+    <sys:String x:Key="UserDeskTitle">User Page</sys:String>
+    <sys:String x:Key="ClientsButtonTitle">Clients</sys:String>
+    <sys:String x:Key="OrdersButtonTitle">Orders</sys:String>
+    <sys:String x:Key="ProductsButtonTitle">Products</sys:String>
+    <sys:String x:Key="ReviewsButtonTitle">Reviews</sys:String>
+    <sys:String x:Key="FromPriceTitle">Price from</sys:String>
+    <sys:String x:Key="ToPriceTitle">To</sys:String>
+    <sys:String x:Key="CategoriesChoiceTitle">Flower Categories</sys:String>
+    <sys:String x:Key="ColorsChoiceTitle">Colors</sys:String>
+    <sys:String x:Key="DetailsCardButtonTitle">Details</sys:String>
+    <sys:String x:Key="OrderCardIdTitle">Order Id</sys:String>
+    <sys:String x:Key="MainWindowNOSelectedTitle">Welcome To Flower Shop!</sys:String>
+    <sys:String x:Key="AddentityButtonTitle">Add</sys:String>
+    <sys:String x:Key="Main_CartButton">Cart</sys:String>
+    <sys:String x:Key="Main_OrderMoreButton">More</sys:String>
+    <sys:String x:Key="Main_OrderDeleteButton">Delete</sys:String>
+    <sys:String x:Key="Main_ProductPrice">Price: </sys:String>
+    <sys:String x:Key="Main_ProducrAmount">Amount: </sys:String>
+    <sys:String x:Key="Main_ProductRatung">Rating: </sys:String>
+    <sys:String x:Key="Main_AddToCartButton">Add To Cart</sys:String>
+    <sys:String x:Key="Main_implementButton">Implement</sys:String>
+
+
+
+
+    <!--User More Window-->
+    <sys:String x:Key="MorePageTitle">User Profile</sys:String>
+    <sys:String x:Key="MoreNameTitle">Name:</sys:String>
+    <sys:String x:Key="MoreSurenameTitle">Surename:</sys:String>
+    <sys:String x:Key="MoreEnailTitle">Email:</sys:String>
+    <sys:String x:Key="MorePhoneTitle">Phone:</sys:String>
+    <sys:String x:Key="MoreRoleTitle">Role</sys:String>
+    <sys:String x:Key="SaveNewInfoButtonTitle">Save</sys:String>
+    <sys:String x:Key="CancelNewInfoButtonTitle">Cancel</sys:String>
+    <sys:String x:Key="DeleteNewInfoButtonTitle">Delete</sys:String>
+    
+    
+    <!--Order details window-->
+    <sys:String x:Key="OrderDetails_WindowTitle">Order Details</sys:String>
+    <sys:String x:Key="OrderDetails_OrderInformation">Order information</sys:String>
+    <sys:String x:Key="OrderDetails_LeaveFeedback">Leave Feedback</sys:String>
+    <sys:String x:Key="OrderDetails_YourFeedback">Your feedback:</sys:String>
+    <sys:String x:Key="OrderDetails_Rating">Rating(0-10):</sys:String>
+    <sys:String x:Key="OrderDetails_SaveReviewButton">Save Review</sys:String>
+    <sys:String x:Key="OrderDetails_NewStatus">New Status</sys:String>
+    <sys:String x:Key="OrderDetails_SaveStatusButton">Save Status</sys:String>
+    
+    <!--Cart window-->
+    <sys:String x:Key="Cart_WindowTitle">Shopping Cart</sys:String>
+    <sys:String x:Key="Cart_OrderButton">Order</sys:String>
+    <sys:String x:Key="Cart_CancelButton">Cancel</sys:String>
+    <sys:String x:Key="Cart_TotalPrice">Total Price: </sys:String>
+    <sys:String x:Key="Cart_OrderedQuantity">Quantity: </sys:String>
+    <sys:String x:Key="Cart_RemoveButton">Remove</sys:String>
+    
+    <!--Review More Window-->
+    <sys:String x:Key="ReviewMore_DateTitle">Date: </sys:String>
+    <sys:String x:Key="ReviewMore_WindowTitle">Review Details</sys:String>
+
+    <!--Add New Product-->
+    <sys:String x:Key="AddProduct_WindowTitle">Add New Product</sys:String>
+    <sys:String x:Key="ReviewMore_ProductName">Product Name:</sys:String>
+    <sys:String x:Key="ReviewMore_Description">Description:</sys:String>
+    <sys:String x:Key="AddProduct_Price">Price: </sys:String>
+    <sys:String x:Key="AddProduct_Amount">Amount:</sys:String>
+    <sys:String x:Key="AddProduct_PhotoPath">Photo Path:</sys:String>
+</ResourceDictionary>
