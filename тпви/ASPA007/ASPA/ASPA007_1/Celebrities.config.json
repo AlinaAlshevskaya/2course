@@ -1,0 +1,7 @@
+{
+  "Celebrities": {
+    "PhotosRequestPath": "/Photo",
+    "PhotosFolder": "images",
+    "ConnectionString": "Server=DESKTOP-T12FKAO\\SQLEXPRESS;Database=Lab6_Db;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}

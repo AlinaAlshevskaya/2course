@@ -1,0 +1,75 @@
+﻿
+@hp=https://localhost:7050
+@capi=/api/Celebrities
+
+
+
+GET {{hp}}{{capi}}
+
+
+
+###
+GET {{hp}}{{capi}}/7
+
+
+
+###
+GET {{hp}}{{capi}}/Lifeevents/7
+
+
+
+###
+DELETE {{hp}}{{capi}}/4
+
+
+
+###
+POST {{hp}}{{capi}}
+Content-Type: application/json
+
+{
+  "fullName": "Николай Ершов",
+  "nationality": "RU",
+  "reqPhotoPath":"Ershov.jpg"
+}
+### MapPut("/{id:int:min(1)}",
+
+PUT {{hp}}{{capi}}/10
+Content-Type:application/json
+{
+  "fullName":"Николай Ершов",
+  "nationality":"RU",
+  "reqPhotoPath":"Ershov.jpg"
+
+}
+###
+GET {{hp}}{{capi}}/photo/Ershov.jpg
+
+
+###
+@lapi=/api/Lifeevents
+###
+
+
+
+GET {{hp}}{{lapi}}
+
+  
+###
+GET {{hp}}{{lapi}}/Celebrities/3
+
+
+###
+DELETE {{hp}}{{lapi}}/10
+
+  
+###
+POST {{hp}}{{lapi}}
+Content-Type:application/json
+{
+"celebrityId": 9,
+"date": "1931-04-19T00:00:00",
+"description": "Что-та",
+"reqPhotoPath": null
+}
+###

@@ -1,0 +1,9 @@
+{
+  "Celebrities": {
+    "PhotosRequestPath": "/Photos",
+    "PhotosFolder": "D:\\Documents\\тпви\\ASPA8\\ASPA\\ASPA008_1\\Photos",
+    "ConnectionString": "Server=DESKTOP-T12FKAO\\SQLEXPRESS; Database=Lab6_Db; Trusted_Connection=true; TrustServerCertificate=Yes",
+    "CountryCodesPath": "D:\\Documents\\тпви\\ASPA8\\ASPA\\ASPA008_1\\CountryCodes\\Country_Codes.json"
+  }
+
+}

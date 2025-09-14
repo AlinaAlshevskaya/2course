@@ -1,0 +1,7 @@
+﻿{
+  "Celebrities": {
+    "PhotosFolder": "D:\\Documents\\тпви\\ASPA_006\\Celebrities_Photos",
+    "ConnectionString": "Server=DESKTOP-T12FKAO\\SQLEXPRESS; Database=Lab6_Db; Trusted_Connection=true; TrustServerCertificate=Yes"
+  }
+
+}
