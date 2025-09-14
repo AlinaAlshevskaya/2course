@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Органайзер</title>
+  
+    <link rel="icon" type="image/x-icon" href="task-square-svgrepo-com.svg">
+  
+</head>
+<style>
+h1{
+    color: green;
+    padding-top: 20px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+   
+}
+h2{
+    color: green;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 36px;
+}
+.inputTask{
+    margin: 50px auto;
+    width: 70%;
+ 
+}
+#newTaskInput{
+    height: 40px;
+    width: 550px;
+    margin-right: 50px;
+    border-radius: 5px;
+    border-style: solid;
+    
+}
+input::placeholder{
+    font-size: large;
+    font-weight: bolder;
+}
+.outputFilters{ 
+    display: flex;
+    margin: 50px auto;
+    width: 75%;
+    justify-content: space-between;
+    font-size: 20px;
+    
+}
+#add{
+    
+    text-decoration: none;
+    background-color:rgb(196, 255, 203) ;
+    transition-duration: 0.5s;
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 10px;
+    height: 50px;
+    font-size: larger;
+
+}
+
+.outputFilters button{
+    color: white;
+    background-color: green;
+    transition-duration: 0.5s;
+    border: 2px solid rgb(30, 30, 30);
+    border-radius: 10px;
+    height: 70px;
+    font-size: larger;
+    width:300px;
+    
+
+}
+
+
+.task{
+    margin: 10px auto;
+    display: inline-flex;
+    width: 95%;
+    border: 2px solid black;
+    margin-left: 25px;
+    align-items: center;
+    border-radius: 15px;
+}
+.task input{
+    margin-left: 20px;
+    margin-right: 50px;
+    height: 25px;
+    width: 25px;
+}
+.task p{
+    width: 500px;
+    margin-right: 50px;
+    font-family: sans-serif;
+    font-size: large;
+}
+.task button{
+    margin:  0px 20px;
+    height: 45px;
+    font-size: large;
+    border-style: none;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 15px;
+    transition-duration: 0.5s;
+    border: 1px solid black;
+}
+.task button[name="Delete"]{
+    background-color: red;
+}
+
+</style>
+<body>
+    
+    
+    <div class="main">
+        <h1>Дела</h1>
+        <div class="inputTask">
+            <input type="text" placeholder="Введите имя новой задачи" name="newTask" id="newTaskInput">
+            <button id="add">Добавить новую задачу</button>
+        </div>
+        <div class="outputFilters">
+            <button id="showAll">Показать все</button>
+            <button id="showTrue">Показать выполненные</button>
+            <button id="showFalse">Показать не выполненные</button>
+            <button id="Clear">Очистить</button>
+        </div>
+        <h2>Список дел</h2>
+        <div class="tasksList">
+        </div>
+    </div>
+        
+</body>
+<script src="lab13.js"></script>
+        
+</html>
